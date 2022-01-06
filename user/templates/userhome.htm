@@ -1,0 +1,120 @@
+
+{% extends 'master_template.htm' %}
+{% load static %}
+
+
+{% block header %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="headerA col-lg-12 p-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <h4 class="d-none  d-sm-none d-md-block">have any question?</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 rt">
+                        <div class="row">
+                            <div class="d-flex mr-0 ml-auto">
+                                <div>
+                                    <i class="{% static 'fas fa-envelope' %}"></i>
+                                    <span>WELCOME USER:{{sunm}}</span>
+                                </div>
+                                <div>
+                                    <i class="{% static 'fas fa-phone-alt' %}"></i>
+                                    <span></span>
+                                </div>
+                                <div class="d-block d-none d-sm-block d-md-none">
+                                    <i class="fas fa-user-alt "></i>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--  end of headerA -->
+
+
+        <!--  start of headerB -->
+        <div class="HeaderB  col-lg-12 p-2">
+            <div class="container">
+                <div class="row">
+                    <header class="main-header  ">
+                        <nav class="navbar navbar-expand-md navbar-dark custom-bg pl-0 pr-0 ">
+                            <a class="navbar-brand" href="#">Project Management System</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                                <ul class="navbar-nav mr-0 ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="/user/">User Home <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/login/">logout</a>
+                                    </li>
+                                    
+
+
+
+                                </ul>
+
+                            </div>
+                        </nav>
+                    </header>
+                </div>
+            </div>
+
+        </div><!--  end of headerB -->
+
+    </div>
+    {% endblock  %}
+
+
+    {% block carosel %}
+
+    {% endblock  %}
+    
+    {% block yellowbar %}
+
+    {% endblock %}
+
+    {% block Team %}
+
+    {% endblock %}
+  
+
+    {% block welcome %}
+    <div class="container">
+       
+        <div class="row">
+           
+            <div class="col-lg-6 offset-md-3   text-center pt-5 pb-5 ">
+                
+                <div class="row">
+                    <h3 class=" mr-10">welcome to the USER panel</h3>
+                  
+                    <p>Project management is the process of leading the work of a team to achieve all project goals
+                        within the given constraints. This information is usually described in project
+                        documentation, created at the beginning of the development process. The primary constraints
+                        are scope, time, and budget.</p>
+                    
+                </div>
+                
+
+            </div>
+           
+        </div>
+       
+    </div>
+    {% endblock %}
+

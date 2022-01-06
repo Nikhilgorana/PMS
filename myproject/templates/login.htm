@@ -1,0 +1,68 @@
+{% extends 'master_template.htm' %}
+{% load static %}
+
+
+{% block carosel %}
+
+{% endblock %}
+
+
+
+{% block yellowbar %}
+
+{% endblock %}
+
+{% block welcome %}
+
+
+<center>
+    <h2>login here!!!</h2>
+<font color="green">{{msg}}</font>
+<form method="POST" action="/login/">
+    {% csrf_token %}
+    <table class="mr-10 ml-5 " cellspacing="10">
+
+
+        <tr>
+            <td>user name</td>
+            <td><input type="text" name="username" placeholder="enter your username"></td>
+        </tr>
+
+        <tr>
+            <td>password</td>
+            <td><input type="password" name="password" placeholder="enter your password"></td>
+        </tr>
+
+
+
+
+        <tr>
+
+            <center>
+                <td colspan="2"><input type="submit" value="login"></td>
+            </center>
+        </tr>
+
+
+
+    </table>
+</form>
+</center>
+{% endblock %}
+
+
+{% block Team %}
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+

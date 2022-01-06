@@ -1,0 +1,63 @@
+{% extends 'master_template.htm' %}
+
+
+{% block carosel %}
+
+<style>
+    #category_main
+    {
+        height:auto;
+        width:600px;
+         
+    }    
+    .category_part
+    {
+        height:200px;
+        width:200px;
+        float:left;
+        
+    }
+    </style>
+    <center>
+        <br>
+        <br>
+    <h2>Project Sub Categories >> {{catnm}}</h2>
+    
+    <div id="category_main" >
+        {% for row in sclist %}
+        <a href="">
+        <div class="category_part" >
+            <center>
+            <img src="{{media_url}}{{row.caticonnm}}" height="150" width="150"/>
+            <br><br>
+            <b>{{row.subcatnm}}</b>
+            </center>    
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+</center>
+{% endblock %}
+
+
+
+{% block yellowbar %}
+
+{% endblock %}
+
+
+{% block Team %}
+  
+{% endblock %}
+
+{% block welcome %}
+
+{% endblock %}
+
+ 
+{% block footer %}
+
+{% endblock %}
+
+
+

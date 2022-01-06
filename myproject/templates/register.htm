@@ -1,0 +1,122 @@
+{% extends 'master_template.htm' %}
+
+{% load static %}
+
+{% block carosel %}
+
+{% endblock %}
+
+{% block yellowbar %}
+
+{% endblock %}
+
+
+
+{% block welcome %}
+{% endblock %}
+
+{% block Team %}
+
+<script>
+
+    function checkEmail(unm)
+    {
+      var ref=document.getElementById('response')
+      var xhttp = new XMLHttpRequest()
+      xhttp.open("GET","http://localhost:8000/checkEmail/?unm="+unm,true)
+      xhttp.send()
+      
+      xhttp.onreadystatechange=function(){
+        if(xhttp.status==200 && xhttp.readyState==4)
+        {
+         if(xhttp.responseText==1)
+         {
+           ref.innerHTML="EmailID alrady exists , please try with new"
+           ref.style.color="red"
+         }
+         else
+         {
+           ref.innerHTML="EmailID available"
+           ref.style.color="green"
+         }				
+        }
+      }
+    }
+    
+    </script>
+    
+
+
+<center>
+
+
+<h2>Register here!!!</h2>
+<font color="blue">{{msg}}</font>
+<form method="POST" action="/register/">
+    {% csrf_token %}
+    <table class="mr-10 ml-5 " cellspacing="10">
+        <tr>
+            <td>name</td> <br>
+            <td><input type="text" name="name" placeholder="enter your name"></td>
+        </tr>
+
+        <tr>
+            <td>user name</td>
+            <td><input onkeyup="checkEmail(this.value)" type="text" name="username" placeholder="Enter username" />
+        </tr>
+        <span id="response"></span>
+
+        <tr>
+            <td>password</td>
+            <td><input type="password" name="password" placeholder="enter your password"></td>
+        </tr>
+
+        <tr>
+            <td>address</td>
+            <td><textarea cols="23" row="50" name="address" placeholder="enter address"> </textarea></td>
+        </tr>
+
+        <tr>
+            <td>mobile</td>
+            <td><input type="text" name="mobile" placeholder="enter mobile no."></td>
+        </tr>
+        &nbsp;
+
+        <tr>
+            <td>city</td>
+            <td>
+                <select style="width: 100%;" id="" name="city">
+                    <option value="">select city</option>
+                    <option value="">indore</option>
+                    <option value="">ujjain</option>
+                    <option value="">bhopal</option>
+                    <option value="">neemuch</option>
+
+
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>gender</td>
+            <td>
+                male<input type="radio" value="male" name="gender">
+                &nbsp;&nbsp;
+                female<input type="radio" value="female" name="gender">
+            </td>
+        </tr>
+
+        <tr>
+
+            <center>
+                <td colspan="2"><input type="submit" value="Register"></td>
+            </center>
+        </tr>
+
+
+
+    </table>
+</form>
+</center>
+
+{% endblock %}

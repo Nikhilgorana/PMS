@@ -1,0 +1,73 @@
+{% extends 'adminhome.htm' %}
+
+
+{% load static %}
+{% block welcome %}
+<center>
+    <h2>Edit Profile Here!!!</h2>
+<font color="blue">{{msg}}</font>
+<form method="POST" action="/myadmin/epadmin">
+    {% csrf_token %}
+    <table class="mr-10 ml-5 " cellspacing="10">
+        <tr>
+            <td>name</td> <br>
+            <td><input type="text" name="name" value="{{userDetails.name}}"></td>
+        </tr>
+
+        <tr>
+            <td>user name</td>
+            <td><input type="text" name="username" value="{{userDetails.username}}"></td>
+        </tr>
+
+      
+        <tr>
+            <td>address</td>
+            <td><textarea cols="23" row="50" name="address" >{{userDetails.address}}</textarea> </td>
+        </tr>
+
+        <tr>
+            <td>mobile</td>
+            <td><input type="text" name="mobile" value="{{userDetails.mobile}}"></td>
+        </tr>
+        &nbsp;
+
+        <tr>
+            <td>city</td>
+            <td>
+                <select style="width: 100%;" id="" name="city">
+                    <option value="">{{userDetails.city}}</option>
+                    <option value="">indore</option>
+                    <option value="">ujjain</option>
+                    <option value="">bhopal</option>
+                    <option value="">neemuch</option>
+
+
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>gender</td>
+            <td>
+                male<input type="radio" value="male" name="gender">
+                &nbsp;&nbsp;
+                female<input type="radio" value="female" name="gender">
+            </td>
+        </tr>
+
+        <tr>
+
+            <center>
+                <td colspan="2"><input type="submit" value="Register"></td>
+            </center>
+        </tr>
+
+
+
+    </table>
+</form>
+    
+</center>
+
+
+{% endblock %}
